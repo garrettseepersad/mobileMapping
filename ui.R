@@ -34,6 +34,12 @@ shinyUI(navbarPage(
   "#codeLocal",
   id = "nav",
   tabPanel(
+    "Reported outbreaks",
+    
+    leafletOutput("occuranceDatabase", height = "600px")
+    
+  ),
+  tabPanel(
     "Submit outbreak",
     titlePanel("Submit outbreak"),
     
@@ -53,7 +59,7 @@ shinyUI(navbarPage(
       verbatimTextOutput("lat"),
       verbatimTextOutput("long")
     )
-      )
+    )
     ),
     br(),
     actionButton("geoloc",
@@ -63,12 +69,7 @@ shinyUI(navbarPage(
     leafletOutput("submitDataToMap", height = "600px")
   )
   ,
-  tabPanel(
-    "Reported outbreaks",
-    
-    leafletOutput("occuranceDatabase", height = "600px")
-    
-  ),
+ 
   tabPanel(
     "Download database",
     
